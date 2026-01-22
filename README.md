@@ -1,103 +1,102 @@
-# testla
+# Testla
 
-FOSS Test Case Management
+Git-native test case management for modern development workflows.
 
-## Installation
+## What is Testla?
 
-This project uses [uv](https://github.com/astral-sh/uv) for package management.
+Testla stores test cases as Markdown files in your repository, making them:
+
+- **Version controlled** - Cases branch, merge, and have history like code
+- **PR reviewable** - Test case changes appear alongside code changes
+- **CI-native** - No external service required to access test definitions
+
+## Quick Start
 
 ```bash
-# Clone the repository
-git clone https://github.com/m1yag1/testla.git
-cd testla
+# Install
+pip install testla
 
-# Install dependencies
-uv sync
+# Initialize in your repo
+testla init --name "My Project"
 
-# Install in development mode
-uv pip install -e .
+# Create a test case
+testla case new auth/login --title "User can login"
+
+# List cases
+testla case list
+```
+
+## Test Case Format
+
+Cases live in `testla/cases/` as Markdown with YAML frontmatter:
+
+```markdown
+---
+id: TC001
+title: User can login with valid credentials
+priority: high
+tags: [auth, smoke]
+automation:
+  status: automated
+  test_path: tests/test_auth.py::test_valid_login
+---
+
+## Preconditions
+- User account exists
+
+## Steps
+1. Navigate to login page
+2. Enter valid credentials
+
+## Expected Result
+User sees dashboard
+```
+
+## pytest Integration
+
+Link automated tests to cases using the `@pytest.mark.testla` marker:
+
+```python
+import pytest
+
+@pytest.mark.testla("TC001")
+def test_user_can_login():
+    ...
+```
+
+Run tests and see the Testla report:
+
+```bash
+pytest -m testla -v
+```
+
+## Configuration
+
+Add to your `pyproject.toml`:
+
+```toml
+[tool.testla]
+project_name = "My Project"
+case_id_prefix = "TC"
+case_id_digits = 3
 ```
 
 ## Development
 
-### Setup
-
-1. Install development dependencies:
-   ```bash
-   uv sync --group dev
-   ```
-
-2. Install pre-commit hooks:
-   ```bash
-   pre-commit install
-   ```
-
-### Running Tests
-
 ```bash
+# Clone and install
+git clone https://github.com/m1yag1/testla.git
+cd testla
+uv sync --group dev
+
 # Run tests
-tox
+uv run pytest tests/ -v
 
-# Run tests with coverage
-tox -e coverage
-
-# Run specific test environment
-tox -e py312
+# Format and lint
+uv run ruff format .
+uv run ruff check .
 ```
-
-### Code Quality
-
-```bash
-# Format and lint code
-tox -e fix
-
-# Type checking
-tox -e mypy
-
-# Run all pre-commit hooks
-pre-commit run --all-files
-```
-
-## Usage
-
-After installation, you can use the CLI:
-
-```bash
-testla --help
-```
-
-## Project Structure
-
-```
-testla/
-├── src/
-│   └── testla/
-│       ├── __init__.py
-│       ├── cli.py
-│       └── ...
-├── tests/
-│   ├── unit/
-│   └── integration/
-├── docs/
-├── pyproject.toml
-├── tox.ini
-├── README.md
-└── ...
-```
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Make your changes
-4. Run tests and ensure they pass (`tox`)
-5. Commit your changes (`git commit -m 'Add amazing feature'`)
-6. Push to the branch (`git push origin feature/amazing-feature`)
-7. Open a Pull Request
 
 ## License
-This project is licensed under the Apache-2.0 License - see the LICENSE file for details.
 
-## Author
-
-- m1yag1 - 8730430+m1yag1@users.noreply.github.com
+Apache-2.0
