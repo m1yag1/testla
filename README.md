@@ -2,6 +2,16 @@
 
 Git-native test case management for modern development workflows.
 
+> _"In testing, we trust... but verify."_
+
+## Inspiration
+
+Testla is inspired by **Nikola Tesla**, the AI debugger from [Quality Assurance in Another World](https://en.wikipedia.org/wiki/Quality_Assurance_in_Another_World) - an anime/manga where a QA engineer is transported to a fantasy world and must use his debugging skills to fix bugs in reality itself.
+
+Tesla is the protagonist's AI companion who helps identify and document bugs in the world's system. Like Tesla, Testla aims to be your trusty companion for documenting, tracking, and verifying test cases.
+
+Watch the anime on [Crunchyroll](https://www.crunchyroll.com/series/G24H1NW30/quality-assurance-in-another-world).
+
 ## What is Testla?
 
 Testla stores test cases as Markdown files in your repository, making them:
