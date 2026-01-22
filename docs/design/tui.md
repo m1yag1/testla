@@ -53,6 +53,7 @@ The dashboard provides an at-a-glance overview of project health and recent acti
 ```
 
 **Components:**
+
 - `ProjectHeader` - Shows project name, git branch, commit SHA
 - `RecentRunsPanel` - DataTable of recent test runs with status indicators
 - `QuickStatsPanel` - Key metrics (total cases, automated, passing, flaky)
@@ -115,11 +116,13 @@ The case browser allows exploring and filtering test cases with a tree/detail sp
 ```
 
 **Components:**
+
 - `FilterBar` - Shows active filters and case count
 - `CaseTree` - Collapsible tree view organized by section path
 - `CaseDetailPanel` - Markdown-rendered case details with metadata
 
 **Tree Node Indicators:**
+
 - `●` = Automated test case
 - `○` = Manual/not automated
 - `▼` = Expanded folder
@@ -174,6 +177,7 @@ Shows details and results of a specific test run.
 ```
 
 **Components:**
+
 - `RunHeader` - Run name, git context, CI info, duration
 - `ResultSummaryPanel` - Pass/fail/skip counts with progress bars
 - `FailedTestsList` - Scrollable list of failures with brief error messages
@@ -222,6 +226,7 @@ Modal overlay showing full details of a failed test.
 ```
 
 **Components:**
+
 - `FailureMetadata` - Status, duration, run reference
 - `ErrorPanel` - Formatted error message
 - `StackTracePanel` - Collapsible stack trace with syntax highlighting
@@ -284,7 +289,7 @@ class TestlaApp(App):
 
     CSS_PATH = "styles.tcss"
     TITLE = "Testla"
-    
+
     BINDINGS = [
         Binding("q", "quit", "Quit", show=True),
         Binding("?", "help", "Help", show=True),
@@ -340,25 +345,35 @@ Use Textual CSS (`.tcss`) for styling:
 /* styles.tcss */
 
 Screen {
-    background: $surface;
+  background: $surface;
 }
 
 .panel-title {
-    text-style: bold;
-    color: $primary;
-    padding-bottom: 1;
-    border-bottom: solid $primary-darken-2;
-    margin-bottom: 1;
+  text-style: bold;
+  color: $primary;
+  padding-bottom: 1;
+  border-bottom: solid $primary-darken-2;
+  margin-bottom: 1;
 }
 
 /* Status colors */
-.status-passed { color: $success; }
-.status-failed { color: $error; }
-.status-skipped { color: $warning-darken-1; }
+.status-passed {
+  color: $success;
+}
+.status-failed {
+  color: $error;
+}
+.status-skipped {
+  color: $warning-darken-1;
+}
 
 /* Tree indicators */
-.automated { color: $success; }
-.manual { color: $text-muted; }
+.automated {
+  color: $success;
+}
+.manual {
+  color: $text-muted;
+}
 ```
 
 ---
@@ -403,6 +418,7 @@ $ testla tui
 ## Dependencies
 
 The TUI requires:
+
 - `textual>=0.50.0` - TUI framework
 - `rich>=13.0.0` - Terminal formatting (included with Textual)
 

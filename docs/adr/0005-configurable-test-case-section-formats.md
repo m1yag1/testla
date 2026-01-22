@@ -27,11 +27,11 @@ section_format = "bdd"  # Options: "bdd", "aaa", "classic"
 
 **Format definitions:**
 
-| Format | Section 1 | Section 2 | Section 3 |
-|--------|-----------|-----------|-----------|
-| `bdd` | Given | When | Then |
-| `aaa` | Arrange | Act | Assert |
-| `classic` | Preconditions | Steps | Expected Result |
+| Format    | Section 1     | Section 2 | Section 3       |
+| --------- | ------------- | --------- | --------------- |
+| `bdd`     | Given         | When      | Then            |
+| `aaa`     | Arrange       | Act       | Assert          |
+| `classic` | Preconditions | Steps     | Expected Result |
 
 **Behavior:**
 

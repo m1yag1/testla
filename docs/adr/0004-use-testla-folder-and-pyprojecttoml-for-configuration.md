@@ -48,6 +48,7 @@ status_checks = true
 ```
 
 The `testla init` command will:
+
 1. Create `testla/cases/` directory
 2. Add `[tool.testla]` section to `pyproject.toml` (or create it if missing)
 

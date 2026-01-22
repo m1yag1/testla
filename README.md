@@ -42,13 +42,16 @@ automation:
 ---
 
 ## Preconditions
+
 - User account exists
 
 ## Steps
+
 1. Navigate to login page
 2. Enter valid credentials
 
 ## Expected Result
+
 User sees dashboard
 ```
 

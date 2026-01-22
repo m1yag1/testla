@@ -22,6 +22,7 @@ Traditional test case management systems (TestRail, Zephyr, qTest) store test ca
 Test cases will be stored as Markdown files with YAML frontmatter in the `.testla/cases/` directory within the repository.
 
 Example format:
+
 ```markdown
 ---
 id: TC001
@@ -34,17 +35,21 @@ automation:
 ---
 
 ## Preconditions
+
 - User account exists
 
 ## Steps
+
 1. Navigate to login page
 2. Enter valid credentials
 
 ## Expected Result
+
 User sees dashboard
 ```
 
 The backend (API/database) stores only:
+
 - Test runs (execution sessions)
 - Results (outcomes of executing cases)
 - Test case snapshots (immutable copies at execution time)

@@ -30,15 +30,15 @@ Testla is a git-native FOSS test case management system inspired by "Quality Ass
 
 ## Key Files
 
-| File | Purpose |
-|------|---------|
-| `src/testla/cli.py` | CLI entry point (Typer) |
-| `src/testla/pytest_plugin.py` | pytest marker and reporting |
-| `src/testla/domain/test_case.py` | Core TestCase model |
-| `src/testla/repository/case_loader.py` | Parses Markdown case files |
-| `src/testla/repository/config.py` | Handles `pyproject.toml` `[tool.testla]` |
-| `docs/adr/` | Architecture Decision Records |
-| `CLAUDE.md` | Project context |
+| File                                   | Purpose                                  |
+| -------------------------------------- | ---------------------------------------- |
+| `src/testla/cli.py`                    | CLI entry point (Typer)                  |
+| `src/testla/pytest_plugin.py`          | pytest marker and reporting              |
+| `src/testla/domain/test_case.py`       | Core TestCase model                      |
+| `src/testla/repository/case_loader.py` | Parses Markdown case files               |
+| `src/testla/repository/config.py`      | Handles `pyproject.toml` `[tool.testla]` |
+| `docs/adr/`                            | Architecture Decision Records            |
+| `CLAUDE.md`                            | Project context                          |
 
 ## Project Structure
 
@@ -88,13 +88,16 @@ automation:
 ---
 
 ## Preconditions
+
 - User account exists
 
 ## Steps
+
 1. Navigate to login page
 2. Enter valid credentials
 
 ## Expected Result
+
 User sees dashboard
 ```
 
