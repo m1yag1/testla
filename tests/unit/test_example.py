@@ -1,2 +1,1 @@
-def test_example():
-    assert True
+# Unit tests - see test_domain_*.py for domain model tests
