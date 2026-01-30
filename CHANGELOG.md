@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.1.2](https://github.com/m1yag1/testla/compare/v0.1.1...v0.1.2) (2026-01-22)
+
+
+### Bug Fixes
+
+* **release:** support release event and manual trigger for publish workflow ([0b4f93d](https://github.com/m1yag1/testla/commit/0b4f93d6299cb6bb627300623b5e4c68561b20d3))
+
+
+### Documentation
+
+* add inspiration section referencing Quality Assurance in Another World ([a15ab33](https://github.com/m1yag1/testla/commit/a15ab336327c8e8c2b361d5d03b874a738f4e42e))
+
 ## [0.1.1](https://github.com/m1yag1/testla/compare/v0.1.0...v0.1.1) (2026-01-22)
 
 ### Features
